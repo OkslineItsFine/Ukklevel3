@@ -1,0 +1,191 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #0d47a1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- FORM UTAMA (tambah_alumni.php dan edit.php) --- */
+.container-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container-form input, .container-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Penting untuk konsistensi lebar */
+}
+
+/* --- Form Pencarian di index.php (Sejajar) --- */
+.search-form {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* Meluruskan secara vertikal */
+    gap: 10px; 
+    margin: 20px 0;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px; /* Samakan tinggi dengan tombol */
+    width: 350px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Styling Tombol --- */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-tambah {
+    background-color: #007bff;
+    color: white;
+    margin-bottom: 20px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-cari, .btn-simpan {
+    background-color: #007bff;;
+    color: white;
+    height: 40px; 
+    box-sizing: border-box;
+    display: flex; /* Untuk meluruskan teks di tengah */
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-kembali {
+    background-color: #1b3449;
+    color: white;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* --- Styling Tabel --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border-spacing: 0;
+}
+
+table th {
+    background-color: #0d47a1; /* Biru yang lebih gelap untuk header */
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #0d47a1;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.action-links a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+/* Style untuk validasi JS */
+.input-error {
+    border: 2px solid red !important;
+}
+
+/* ======================================= */
+/* MEDIA QUERY: Untuk Layar Smartphone */
+/* ======================================= */
+@media (max-width: 600px) {
+    /* Pastikan container tidak menambah lebar total */
+.container {
+    padding: 10px; /* Kurangi padding di mobile */
+    max-width: 100%; /* Penting untuk menghilangkan pembatasan lebar */
+}
+    
+/* Tombol dan Input Pencarian */
+.search-form {
+    flex-direction: column; /* Tumpuk input dan tombol secara vertikal */
+}
+
+.search-form input[type="text"] {
+    width: 90%; /* Maksimalkan lebar input */
+    margin-bottom: 10px; /* Beri jarak dengan tombol di bawahnya */
+}
+
+.btn-cari {
+    width: 90%; /* Maksimalkan lebar tombol Cari */
+}
+
+/* Tabel yang Sangat Lebar */
+.container {
+    /* Hapus max-width dan padding agar tabel bisa mengisi layar sepenuhnya */
+    max-width: 100%; 
+    padding: 10px;
+}
+    
+table {
+    /* Mencegah tabel terpotong, paksa scrolling horizontal */
+    display: block; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+ }
+    
+/* Opsi 2: Membuat tampilan tabel jadi seperti kartu (lebih kompleks) */
+/* ... tidak direkomendasikan untuk UKK sederhana ... */
+}
